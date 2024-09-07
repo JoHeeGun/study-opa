@@ -1,0 +1,679 @@
+@import "./variables.scss";
+@import "./images.scss";
+
+// @import "./themes.scss";
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../node_modules/bootstrap-vue/src/index.scss";
+@import "./font.scss";
+@import "../assets/css/fontello.css";
+
+html,
+body {
+  -webkit-overflow-scrolling: auto;
+  padding: 0px !important;
+  margin: 0px !important;
+
+  &::-webkit-scrollbar {
+    position: fixed;
+    width: 10px;
+    background: $light;
+  }
+  &::-webkit-scrollbar-thumb {
+    position: fixed;
+    width: 4px;
+    background: $gray-500;
+  }
+  @media (min-width: 992px) {
+    // 비밀노트 배너 작업할때 스크롤 막아야하는데 여기에 걸려서 있고 사용하는 곳이 없어 주석처리
+    //overflow: auto!important;
+  }
+}
+
+// Sticky 옵션 떄문에 주석처리
+// #app {
+//   overflow: hidden;
+// }
+
+// 스크롤바 없애야하는 경우
+.scroll-bar-none::-webkit-scrollbar {
+  display: none !important;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .layout-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.terms-scroller {
+  height: 6em;
+  overflow: auto;
+  font-weight: 300;
+}
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: $primary;
+}
+.custom-control-input[disabled] ~ .custom-control-label:before {
+  // 필요한지 물어보고 추가 or 삭제
+  border-color: #e9ecef;
+}
+
+.custom-checkbox {
+  padding-left: 2.1rem;
+  .custom-control-label {
+    color: $dark;
+    width: 100%;
+    &:before {
+      border-radius: 3px;
+      border: 1.5px solid $primary;
+      // box-shadow: 6px 5px 13px 2px rgba(104, 121, 123, 0.3) !important;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -2.1rem;
+      display: block;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+    &:after {
+      border-radius: 3px;
+      // border: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -2.1rem;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+}
+label,
+label:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.horizontal-radio {
+  width: 100%;
+  .btn.btn-link {
+    text-align: left;
+    padding-left: 2rem;
+    flex-grow: 1;
+    position: relative;
+    span {
+      color: $dark;
+      font-weight: 300;
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: #ffffff;
+      // box-shadow: 6px 5px 10px 1px rgba(104, 121, 123, 0.2);
+      border: 1.2px solid;
+      border-color: $primary;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      border-radius: 50%;
+    }
+    &.active:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: $primary;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 4px;
+      border-radius: 50%;
+    }
+    &.active:before {
+      // box-shadow: 1px 1px 11px 2px rgba(138, 230, 242, 0.46);
+    }
+  }
+}
+.vertical-radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .btn.btn-link {
+    padding-top: 2rem;
+    border-radius: 0.75rem;
+    flex-grow: 1;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: #ffffff;
+      // box-shadow: 6px 5px 10px 1px rgba(104, 121, 123, 0.2);
+      border: 1px solid;
+      border-color: $primary;
+      top: 0;
+      left: 50%;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    &.active:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: $primary;
+      top: 4px;
+      left: 50%;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    &.active:before {
+      // box-shadow: 1px 1px 11px 2px rgba(138, 230, 242, 0.46);
+    }
+  }
+}
+
+.btn {
+  height: 36px;
+  font-size: 14px;
+
+  // &:not(.btn-link) {
+  //   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  //     -6px -6px 10px rgba(255, 255, 255, 0.18);
+  // }
+
+  &.btn-link {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    &.hover  {
+      text-decoration: none !important;
+    }
+    &.focus {
+      text-decoration: none !important;
+    }
+  }
+
+  &.btn-primary {
+    transition: all 0.3s;
+    color: $white;
+    &:hover {
+      background-color: #8ae6f2;
+      border-color: #8ae6f2;
+      color: white;
+    }
+  }
+
+
+  &.btn-white {
+    color: $primary;
+    border: 1.2px solid $primary;
+    transition: all 0.3s;
+    &:hover {
+      background-color: white;
+      border-color: #44c6d8;
+    }
+    &:not(:disabled):not(.disabled):active {
+      color: white;
+      background-color: white;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: #8ae6f2;
+        border-color: #8ae6f2;
+        color: white;
+      }
+    }
+  }
+
+  &.btn-note-white {
+    color: $gray3;
+    border: 1.2px solid $gray3;
+    pointer-events: none;
+  }
+  &.btn-note-gray3 {
+    color: white;
+    background-color: $gray3;
+    border: 1.2px solid $gray3;
+    pointer-events: none;
+  }
+  &.btn-m {
+    height: 55px;
+    font-size: 16px;
+    padding: 14px 0;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+.btn-link:hover {
+  // 필요한지 물어보고 추가 or 삭제
+  text-decoration: none !important;
+}
+.btn.disabled {
+  background: #ebebeb !important;
+  color: #b2b2b2 !important;
+  border: 0 !important;
+  opacity: 1 !important;
+}
+
+.btn.hover-decoration-none {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  font-size: 14px;
+  background: transparent;
+  &::placeholder {
+    color: #b2b2b2;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+
+.terms {
+  color: #666666;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.8;
+
+  .tblDiv {
+    overflow-x:auto;
+  }
+
+  h3 {
+    margin-top: 3rem;
+    margin-bottom: 0.75rem;
+  }
+  ul,
+  ol {
+    padding-left: 1rem;
+    li {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    ol,
+    ul {
+      padding-left: 2rem;
+      list-style-type: upper-roman;
+    }
+  }
+  .table td,
+  .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    font-size: 13px;
+  }
+  table th {
+    background: #fafafa;
+    color: #252525;
+  }
+}
+
+.dropdown {
+  .btn-white {
+    color: $gray6 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+  .select-toggle {
+    background: #ffffff !important;
+  }
+}
+
+.nav-wrapper {
+  width: 100% !important;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+  .nav.nav-tabs {
+    display: table !important;
+    width: 100% !important;
+    .nav-item {
+      display: table-cell !important;
+      width: auto !important;
+      .nav-link {
+        text-align: center;
+        color: #1a1919 !important;
+        border: 0 !important;
+        border-bottom: 1px solid #dae4e6 !important;
+        &.active {
+          border: 0 !important;
+          border-bottom: 1px solid $primary !important;
+        }
+      }
+    }
+  }
+}
+textarea.form-control,
+textarea.form-control:focus {
+  background: #fafafc;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  border: 0;
+  resize: none;
+}
+
+.card,
+.card-body,
+.card-header {
+  &:focus {
+    box-shadow: none !important;
+    border: 0 !important;
+    outline: none !important;
+  }
+}
+.card-header {
+  .icon {
+    transition: 0.2s;
+  }
+  &.not-collapsed {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+input[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
+
+.checkbox-group {
+  // max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .btn-checkbox {
+    border-radius: 0.75rem !important;
+    // box-shadow: 6px 5px 16px 2px rgba(104, 121, 123, 0.18) !important;
+    width: 50%;
+    white-space: nowrap;
+    input {
+      display: none;
+    }
+  }
+}
+
+.curation {
+  width: 100%;
+  .custom-control.custom-checkbox {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    white-space: nowrap;
+  }
+}
+
+.btn-outline-gray {
+  &:focus,
+  &:checked,
+  &.active,
+  &:hover {
+    background: transparent !important;
+    // box-shadow: none !important;
+  }
+  &.active {
+    color: white !important;
+    border-color: $primary !important;
+    background-color: $primary !important;
+    // box-shadow: none !important;
+  }
+}
+// 예외적으로 그림자 없애야하는 경우
+.btn-shadow-none {
+  box-shadow: none !important;
+  > * {
+    box-shadow: none !important;
+  }
+}
+
+// progressbar 배경 없애기
+.progress {
+  background: none;
+}
+
+.progress-bar {
+  overflow: initial;
+  color: #7b7b7b;
+  background-color: #00A5FD;
+  // background-color: $primary !important;
+}
+
+@media all and (min-width: 1300px) {
+  .w-lg-100 {
+    width: 100% !important;
+  }
+}
+
+div[role="radiogroup"].btn-group {
+  .btn.btn-link {
+    color: #7b7b7b !important;
+    &.active {
+      color: $primary !important;
+    }&.hover  {
+       text-decoration: none !important;
+     }
+    &.focus {
+      text-decoration: none !important;
+    }
+  }
+}
+
+.underline-primary {
+  position: relative;
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #8ae6f2;
+  }
+}
+
+.highlighter-primary {
+  display: inline;
+  box-shadow: inset 0 -10px 0 rgba(68, 198, 216, 0.2);
+}
+
+.list-checked {
+  list-style: none !important;
+  li {
+    position: relative;
+    padding-left: 0.625rem;
+    &:before {
+      position: absolute;
+      left: -1rem;
+      top: 0px;
+    }
+  }
+}
+
+.pagination {
+  color: #323232 !important;
+  .page-item {
+    border: 0 !important;
+    .page-link {
+      border: 1 !important;
+      color: #323232 !important;
+      &:hover,
+      &:focus {
+        background: transparent !important;
+        color: #323232 !important;
+      }
+    }
+    &.active {
+      .page-link {
+        color: white !important;
+        background: $primary !important;
+      }
+    }
+  }
+}
+
+.gnb-link {
+  color: #4f4e4e !important;
+  font-weight: 500;
+  &:hover,
+  &.router-link-active {
+    color: #33b5c7 !important;
+    text-decoration: none !important;
+  }
+}
+
+.text-truncate {
+  &.line-2 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.5em;
+    max-height: 3em;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 18px;
+}
+
+.icon-sqaure {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  content: "";
+}
+
+.modal-content {
+  border-radius: 10px !important;
+  border-width: 0px !important;
+}
+
+.modal-footer {
+  border-radius: 0 0 10px 10px !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.icon.rotate-180:before {
+  transition: transform 0.3s;
+  transform: rotate(180deg);
+}
+
+.modal-content .modal-footer {
+  button {
+    &.btn-link {
+      background: transparent !important;
+      color: $primary;
+    }
+  }
+}
+
+.modal-header .close {
+  font-size: 1.5rem;
+}
+
+.coopTitle {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.footerPhoneNo{
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.footerPhoneTime{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #7B7B7B;
+}
+
+.footerEmail{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.b-form-spinbutton {
+  max-height: 22px;
+  max-width: 82px;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1) !important;
+  background: #FAFAFA !important;
+  .btn {
+    margin-top: -.4rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    color: $primary !important;
+    &.active {
+      color: $primary !important;
+    }
+  }
+  .flex-grow-1 {
+    border-left: none !important;
+    border-right: none !important;
+  }
+}
+
+.mw-img-detail {
+  max-width: 47% !important;
+}

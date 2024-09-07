@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+// Noto Sans KR
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+// Noto Sans KR -> 한글 - MinSans / 영어,숫자,특수문자 - Lato
+
+// Min Sans - Regular
+@font-face {
+  font-family: 'Min Sans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Regular.woff') format('woff');
+  font-weight: 400; 
+}
+
+// Min Sans - Medium
+@font-face {
+  font-family: 'Min Sans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+  font-weight: 500;  
+}
+
+// Min Sans - Bold
+@font-face {
+  font-family: 'Min Sans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Bold.woff') format('woff');
+  font-weight: 700;  
+}
+
+// Lato-Regular
+@font-face {
+  font-family: 'Min Sans';
+  src: url('../assets/font/Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+// Lato-Bold
+@font-face {
+  font-family: 'Min Sans';
+  src: url('../assets/font/Lato-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+body {
+  font-family: "Min Sans", sans-serif;
+  margin: 0;
+  word-break: keep-all;
+  color: #000;
+}
+
+@for $var from 1 to 10 {
+  .fw-#{$var}00 {
+    font-weight: $var * 100;
+  }
+}
+
+$font-size: (
+  10,
+  12,
+  13,
+  14,
+  16,
+  17,
+  18,
+  20,
+  21,
+  22,
+  24,
+  26,
+  27,
+  28,
+  30,
+  31,
+  32,
+  34,
+  36,
+  38,
+  40,
+  48,
+  56,
+  80,
+  96
+);
+$font-lg-size: (
+  10,
+  11,
+  12,
+  13,
+  14,
+  17,
+  16,
+  18,
+  20,
+  21,
+  24,
+  26,
+  27,
+  28,
+  30,
+  31,
+  32,
+  34,
+  40,
+  42,
+  48,
+  56,
+  80,
+  96
+);
+
+@each $var in $font-size {
+  .text-#{$var} {
+    font-size: #{$var}px !important;
+  }
+}
+@media print {
+  @each $var in $font-size {
+    .text-pr-#{$var} {
+      font-size: #{$var}rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  @each $var in $font-lg-size {
+    .text-#{$var} {
+      font-size: #{$var}px !important;
+    }
+  }
+}
+
+$line-heights: (135, 160, 165, 170, 180, 200);
+
+@each $var in $line-heights {
+  .lh-#{$var} {
+    line-height: #{$var*0.01};
+  }
+}
+
+.break-keep {
+  word-break: keep-all !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}

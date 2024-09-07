@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+	/* 반드시, Figma의 VDS2.0에서의 해당 UI의 명칭( 대분류, 소분류, 이름) 기입 요망 */
+	/* 반드시, Figma의 VDS2.0에서의 해당 UI의 명칭( 대분류, 소분류, 이름) */
+	/* 반드시, Figma의 VDS2.0에서의 해당 UI의 명칭( 대분류, 소분류, 이름) */
+	.vimeal-h-line {
+		/*
+		소스     :  Figma >> VDS2.0 >> Divider
+		사용법 예 :  <div class="vimeal-h-line h-2"></div>
+		주의     :  height는 직접 설정.
+		*/
+		@apply w-full bg-gray-200;
+	}
+
+	.vimeal-input-text-box {
+		/*
+		사용법 예 :  <input type="text" class="vimeal-input-text-box" placeholder="아이디" />
+		*/
+		@apply w-full h-12 pl-4 border rounded-5 border-gray-300 border-solid
+	}
+
+	/**
+	START of vimeal buttons' prototypes
+
+	주의사항: -proto로 접미사가 붙은 스타일은 프론트엔드쪽에서 직접 사용되기 보다는,
+			여러 proto가 조합된 스타일을 이곳에 정의한 후, 그 스타일을 사용하게 될 것임.
+			즉, proto는 이곳 tailwind.css내에서만 사용 권장.
+	**/
+	.vimeal-button-small-proto {
+		@apply px-2 py-1 text-[14px] rounded-5 border-solid disabled:bg-gray-350
+	}
+
+	.vimeal-button-medium-proto {
+		@apply px-2 py-2 text-[16px] rounded-5 border-solid disabled:bg-gray-350
+	}
+
+	.vimeal-button-large-proto {
+		@apply px-2 py-3 text-[16px] rounded-5 border-solid disabled:bg-gray-350
+	}
+
+	.vimeal-button-primary-proto {
+		@apply text-white bg-vimeal-blue-500 border-0
+	}
+
+	.vimeal-button-primary-bg-none-proto {
+		@apply text-vimeal-blue-500 bg-transparent border border-vimeal-blue-500
+	}
+
+	.vimeal-button-primary-border-none-bg-none-proto {
+		@apply vimeal-button-primary-bg-none-proto border-0
+	}
+
+	/*.vimeal-button-secondary-proto {*/
+	/*    @apply   !* Figma에 정의되지 않음 *!*/
+	/*}*/
+
+	.vimeal-button-secondary-bg-none-proto {
+		@apply text-gray-600 bg-transparent border border-gray-300
+	}
+
+	/*.vimeal-button-secondary-border-none-bg-none-proto {*/
+	/*    @apply vimeal-button-secondary-bg-none-proto border-0*/
+	/*}*/
+
+	.vimeal-button-emphasis-proto {
+		@apply text-white bg-black border-0
+	}
+
+	.vimeal-button-emphasis-bg-none-proto {
+		@apply text-black bg-transparent border border-black
+	}
+
+	.vimeal-button-emphasis-border-none-bg-none-proto {
+		@apply vimeal-button-emphasis-bg-none-proto border-0
+	}
+
+	.vimeal-button-negative-proto {
+		@apply text-white bg-decline border-0
+	}
+
+	.vimeal-button-negative-bg-none-proto {
+		@apply text-decline bg-transparent border border-decline
+	}
+
+	.vimeal-button-negative-border-none-bg-none-proto {
+		@apply vimeal-button-negative-bg-none-proto border-0
+	}
+
+	.vimeal-button-disabled-proto {
+		@apply text-white bg-gray-350 border-0
+	}
+
+	.vimeal-button-disabled-bg-none-proto {
+		@apply text-gray-350 bg-transparent border border-gray-350
+	}
+
+	.vimeal-button-disabled-border-none-bg-none-proto {
+		@apply vimeal-button-disabled-bg-none-proto border-0
+	}
+
+	/**
+		START of Primary buttons
+	**/
+	.vimeal-button-primary-small {
+		@apply vimeal-button-primary-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-primary-small-bg-none {
+		@apply vimeal-button-primary-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-primary-small-border-none-bg-none {
+		@apply vimeal-button-primary-border-none-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-primary-medium {
+		@apply vimeal-button-primary-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-primary-medium-bg-none {
+		@apply vimeal-button-primary-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-primary-medium-border-none-bg-none {
+		@apply vimeal-button-primary-border-none-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-primary-large {
+		@apply vimeal-button-primary-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-primary-large-bg-none {
+		@apply vimeal-button-primary-bg-none-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-primary-large-border-none-bg-none {
+		@apply vimeal-button-primary-border-none-bg-none-proto vimeal-button-large-proto
+	}
+
+
+	/**
+			START of Secondary buttons
+	**/
+
+	/*.vimeal-button-secondary-small {*/
+	/*    !* @apply vimeal-button-secondary-proto vimeal-button-small-proto *!*/
+	/*    @apply   !* Figma에 정의되지 않음 *!*/
+	/*}*/
+
+	.vimeal-button-secondary-small-bg-none {
+		@apply vimeal-button-secondary-bg-none-proto vimeal-button-small-proto
+	}
+
+	/*.vimeal-button-secondary-small-border-none-bg-none {*/
+	/*    @apply vimeal-button-secondary-border-none-bg-none-proto vimeal-button-small-proto*/
+	/*    !*    @apply   !* Figma에 정의되지 않음 *!*!*/
+	/*}*/
+
+	/*.vimeal-button-secondary-medium {*/
+	/*    !* @apply vimeal-button-secondary-proto vimeal-button-medium-proto *!*/
+	/*    @apply   !* Figma에 정의되지 않음 *!*/
+	/*}*/
+
+	.vimeal-button-secondary-medium-bg-none {
+		@apply vimeal-button-secondary-bg-none-proto vimeal-button-medium-proto
+	}
+
+	/*.vimeal-button-secondary-medium-border-none-bg-none {*/
+	/*    !* @apply vimeal-button-secondary-border-none-bg-none-proto vimeal-button-medium-proto *!*/
+	/*    @apply   !* Figma에 정의되지 않음 *!*/
+	/*}*/
+
+	/*.vimeal-button-secondary-large {*/
+	/*    !* @apply vimeal-button-secondary-proto vimeal-button-large-proto *!*/
+	/*    @apply   !* Figma에 정의되지 않음 *!*/
+	/*}*/
+
+	.vimeal-button-secondary-large-bg-none {
+		@apply vimeal-button-secondary-bg-none-proto vimeal-button-large-proto
+	}
+
+	/*.vimeal-button-secondary-large-border-none-bg-none {*/
+	/*    !* @apply vimeal-button-secondary-border-none-bg-none-proto vimeal-button-large-proto *!*/
+	/*    @apply   !* Figma에 정의되지 않음 *!*/
+	/*}*/
+
+	/**
+				START of Emphasis buttons
+	**/
+	.vimeal-button-emphasis-small {
+		@apply vimeal-button-emphasis-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-emphasis-small-bg-none {
+		@apply vimeal-button-emphasis-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-emphasis-small-border-none-bg-none {
+		@apply vimeal-button-emphasis-border-none-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-emphasis-medium {
+		@apply vimeal-button-emphasis-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-emphasis-medium-bg-none {
+		@apply vimeal-button-emphasis-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-emphasis-medium-border-none-bg-none {
+		@apply vimeal-button-emphasis-border-none-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-emphasis-large {
+		@apply vimeal-button-emphasis-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-emphasis-large-bg-none {
+		@apply vimeal-button-emphasis-bg-none-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-emphasis-large-border-none-bg-none {
+		@apply vimeal-button-emphasis-border-none-bg-none-proto vimeal-button-large-proto
+	}
+
+	/**
+				START of Negative buttons
+	**/
+	.vimeal-button-negative-small {
+		@apply vimeal-button-negative-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-negative-small-bg-none {
+		@apply vimeal-button-negative-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-negative-small-border-none-bg-none {
+		@apply vimeal-button-negative-border-none-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-negative-medium {
+		@apply vimeal-button-negative-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-negative-medium-bg-none {
+		@apply vimeal-button-negative-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-negative-medium-border-none-bg-none {
+		@apply vimeal-button-negative-border-none-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-negative-large {
+		@apply vimeal-button-negative-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-negative-large-bg-none {
+		@apply vimeal-button-negative-bg-none-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-negative-large-border-none-bg-none {
+		@apply vimeal-button-negative-border-none-bg-none-proto vimeal-button-large-proto
+	}
+
+	/**
+				START of Disabled buttons
+	**/
+	.vimeal-button-disabled-small {
+		@apply vimeal-button-disabled-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-disabled-small-bg-none {
+		@apply vimeal-button-disabled-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-disabled-small-border-none-bg-none {
+		@apply vimeal-button-disabled-border-none-bg-none-proto vimeal-button-small-proto
+	}
+
+	.vimeal-button-disabled-medium {
+		@apply vimeal-button-disabled-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-disabled-medium-bg-none {
+		@apply vimeal-button-disabled-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-disabled-medium-border-none-bg-none {
+		@apply vimeal-button-disabled-border-none-bg-none-proto vimeal-button-medium-proto
+	}
+
+	.vimeal-button-disabled-large {
+		@apply vimeal-button-disabled-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-disabled-large-bg-none {
+		@apply vimeal-button-disabled-bg-none-proto vimeal-button-large-proto
+	}
+
+	.vimeal-button-disabled-large-border-none-bg-none {
+		@apply vimeal-button-disabled-border-none-bg-none-proto vimeal-button-large-proto
+	}
+
+
+}
+

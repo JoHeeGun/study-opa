@@ -1,0 +1,10 @@
+.bg-img {
+  background: center no-repeat;
+  background-size: contain;
+  $ratios: (25, 50, 60, 65, 70, 75, 100);
+  @each $var in $ratios {
+    &.ratio-#{$var} {
+      padding-bottom: #{$var}+ "%";
+    }
+  }
+}
