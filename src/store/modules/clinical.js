@@ -23,8 +23,5 @@ export const useClinicalStore = defineStore('useClinicalStore', {
 		},
 	},
 
-	persist: {
-		enabled: true,
-		strategies: [{ storage: localStorage }],
-	},
+	
 });

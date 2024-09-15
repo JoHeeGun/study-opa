@@ -56,7 +56,18 @@ let AGE_LIST = [
 		title: '40대',
 		value: 40
 	},
-
+	{
+		title: '50대',
+		value: 50
+	},
+	{
+		title: '60대',
+		value: 60
+	},
+	{
+		title: '70대 이상',
+		value: 70
+	}
 ]
 
 let TABLE_HEADER_LIST = ref([
@@ -65,7 +76,12 @@ let TABLE_HEADER_LIST = ref([
 	'alk',
 	'braf',
 	'egfr',
-
+	'erbb2',
+	'kit',
+	'kras',
+	'nras',
+	'pik3ca',
+	'tp53',
 ])
 
 
